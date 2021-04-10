@@ -1,6 +1,6 @@
 package com.fkhan.simplenews.di
 
-import com.fkhan.simplenews.BuildConfig
+import androidx.viewbinding.BuildConfig
 import com.fkhan.simplenews.api.news.NewsApi
 import com.fkhan.simplenews.api.news.NewsApiImp
 import com.fkhan.simplenews.api.retrofit.RetrofitApi

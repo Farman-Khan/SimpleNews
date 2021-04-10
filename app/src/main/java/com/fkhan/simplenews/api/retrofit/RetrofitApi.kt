@@ -10,7 +10,7 @@ interface RetrofitApi {
 
     @GET("v2/top-headlines")
     fun getTopHeadlines(
-        @Query("country") country: String = "us",
+        @Query("country") country: String = "in",
         @Query("page") pageNumber: Int = 1,
         @Query("apiKey") apiKey: String = API_KEY
     ): Deferred<NewsResponse>
