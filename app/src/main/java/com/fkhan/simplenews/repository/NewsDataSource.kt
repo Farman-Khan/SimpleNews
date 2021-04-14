@@ -1,5 +1,6 @@
 package com.fkhan.simplenews.repository
 
+import android.util.Log
 import androidx.paging.PagingSource
 import androidx.paging.PagingState
 import com.fkhan.simplenews.api.news.NewsApi
@@ -13,6 +14,7 @@ class NewsDataSource @Inject constructor(private val api: NewsApi) : PagingSourc
         try {
             val nextPage = params.key ?: 1
             val response = api.getTopHeadlines("us").await()
+            Log.d("panda", "load: Response -> $response")
             val data = response.articles
 
             //to test
