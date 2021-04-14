@@ -15,7 +15,6 @@ object RetrofitApiFactory {
 
     //creating Auth interceptor common to all api requests
     private val authInterceptor = Interceptor {chain ->
-
         val requestUrl = chain.request()
             .url
             .newBuilder().addQueryParameter("api_key", API_KEY)
@@ -57,4 +56,3 @@ object RetrofitApiFactory {
 
     val retrofitApi: RetrofitApi = retrofit().create(RetrofitApi::class.java)
 }
-

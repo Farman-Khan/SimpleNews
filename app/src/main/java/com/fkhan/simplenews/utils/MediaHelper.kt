@@ -5,7 +5,6 @@ import android.widget.ImageView
 import com.bumptech.glide.Glide
 
 object MediaHelper {
-
     fun loadImage(context: Context, url: String, view: ImageView) {
         Glide.with(context)
             .load(url)

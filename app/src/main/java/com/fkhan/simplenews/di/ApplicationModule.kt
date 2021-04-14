@@ -37,13 +37,11 @@ class ApplicationModule {
             .Builder()
             .build()
 
-
     @Provides
     @Singleton
     fun provideMoshi() = Moshi.Builder()
             .add(KotlinJsonAdapterFactory())
             .build()
-
 
     @Provides
     @Singleton

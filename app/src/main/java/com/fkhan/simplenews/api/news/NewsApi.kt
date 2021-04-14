@@ -5,6 +5,5 @@ import kotlinx.coroutines.Deferred
 
 interface NewsApi {
     suspend fun getTopHeadlines(country: String): Deferred<NewsResponse>
-
     //more methods for news api
 }

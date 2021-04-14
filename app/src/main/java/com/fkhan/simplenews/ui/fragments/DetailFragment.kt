@@ -13,7 +13,6 @@ import com.fkhan.simplenews.viewmodel.NewsViewModel
 class DetailFragment : Fragment() {
     val args: DetailFragmentArgs by navArgs()
     private lateinit var viewModel: NewsViewModel
-
     private var _binding: FragmentDetailBinding? = null
     private val binding get() = _binding!!
 

@@ -27,7 +27,6 @@ class NewsArticleAdapter(var itemClickListener: HomeFragment.ItemClickListener) 
                 itemClickListener.onItemClick(it, position, article)
             }
         }
-
     }
 
     object DataDifferntiator : DiffUtil.ItemCallback<Article>() {
@@ -42,7 +41,6 @@ class NewsArticleAdapter(var itemClickListener: HomeFragment.ItemClickListener) 
     }
 
     class DataViewHolder(val binding: ItemLayoutBinding) : RecyclerView.ViewHolder(binding.root) {
-
         fun bind(article: Article) {
             binding.title.text = article.title
             binding.author.text = article.author
