@@ -5,9 +5,11 @@ import android.widget.ImageView
 import com.bumptech.glide.Glide
 
 object MediaHelper {
-    fun loadImage(context: Context, url: String, view: ImageView) {
-        Glide.with(context)
-            .load(url)
-            .into(view)
+    fun loadImage(context: Context, url: String?, view: ImageView) {
+        url?.let {
+            Glide.with(context)
+                    .load(it)
+                    .into(view)
+        }
     }
 }

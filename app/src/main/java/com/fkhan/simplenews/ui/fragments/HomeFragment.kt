@@ -17,6 +17,7 @@ import com.fkhan.simplenews.model.Article
 import com.fkhan.simplenews.ui.adapter.NewsArticleAdapter
 import com.fkhan.simplenews.viewmodel.NewsViewModel
 import kotlinx.coroutines.flow.collect
+import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
 
 class HomeFragment : Fragment() {
@@ -71,9 +72,9 @@ class HomeFragment : Fragment() {
             //update selected item in view model
             viewModel.setSelectedArticle(item)
 
-            Log.d("panda", "onItemClick:-------- ${item.source.id}")
-            val action = HomeFragmentDirections.actionHomeFragmentToDetailFragment(item.source.id)
-            navController.navigate(action)
+            Log.d("panda", "onItemClick:-------- ${item.source?.id}")
+            /*val action = HomeFragmentDirections.actionHomeFragmentToDetailFragment(item.source?.id)
+            navController.navigate(action)*/
         }
     }
 

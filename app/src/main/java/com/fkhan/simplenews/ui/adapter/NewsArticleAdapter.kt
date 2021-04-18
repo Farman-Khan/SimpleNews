@@ -30,7 +30,6 @@ class NewsArticleAdapter(var itemClickListener: HomeFragment.ItemClickListener) 
     }
 
     object DataDifferntiator : DiffUtil.ItemCallback<Article>() {
-
         override fun areItemsTheSame(oldItem: Article, newItem: Article): Boolean {
             return oldItem.title == newItem.title
         }
@@ -46,7 +45,7 @@ class NewsArticleAdapter(var itemClickListener: HomeFragment.ItemClickListener) 
             binding.author.text = article.author
 
             MediaHelper.loadImage(binding.thumbnail.context,
-                article.urlToImage, binding.thumbnail )
+                article?.urlToImage, binding.thumbnail )
         }
     }
 }

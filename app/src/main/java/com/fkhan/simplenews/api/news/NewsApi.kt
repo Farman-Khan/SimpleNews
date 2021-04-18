@@ -4,6 +4,6 @@ import com.fkhan.simplenews.model.NewsResponse
 import kotlinx.coroutines.Deferred
 
 interface NewsApi {
-    suspend fun getTopHeadlines(country: String): Deferred<NewsResponse>
+    suspend fun getTopHeadlines(country: String = "in"): Deferred<NewsResponse>
     //more methods for news api
 }
