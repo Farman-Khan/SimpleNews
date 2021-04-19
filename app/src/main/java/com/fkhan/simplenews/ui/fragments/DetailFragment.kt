@@ -8,6 +8,7 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.navArgs
 import com.fkhan.simplenews.databinding.FragmentDetailBinding
+import com.fkhan.simplenews.utils.MediaHelper
 import com.fkhan.simplenews.viewmodel.NewsViewModel
 
 class DetailFragment : Fragment() {
@@ -35,7 +36,11 @@ class DetailFragment : Fragment() {
 
         //reading seleteced article
         selectedArticle?.let {
-            binding.articleTitle.text = it.title
+            binding.title.text = it.title
+            binding.author.text = it.author
+
+            MediaHelper.loadImage(binding.thumbnail.context,
+                    it?.urlToImage, binding.thumbnail )
         }
     }
 

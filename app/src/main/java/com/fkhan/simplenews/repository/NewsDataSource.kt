@@ -5,7 +5,6 @@ import androidx.paging.ExperimentalPagingApi
 import androidx.paging.PagingSource
 import androidx.paging.PagingState
 import com.fkhan.simplenews.api.news.NewsApi
-import com.fkhan.simplenews.api.retrofit.RetrofitApi
 import com.fkhan.simplenews.model.Article
 import javax.inject.Inject
 

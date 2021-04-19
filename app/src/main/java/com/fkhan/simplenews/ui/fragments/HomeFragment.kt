@@ -57,12 +57,6 @@ class HomeFragment : Fragment() {
     private fun setupUI() {
         binding.recyclerView.layoutManager = LinearLayoutManager(this.context)
         articleAdapter = NewsArticleAdapter(ItemClickListener())
-        binding.recyclerView.addItemDecoration(
-            DividerItemDecoration(
-                binding.recyclerView.context,
-                (binding.recyclerView.layoutManager as LinearLayoutManager).orientation
-            )
-        )
         binding.recyclerView.adapter = articleAdapter
     }
 
@@ -72,9 +66,10 @@ class HomeFragment : Fragment() {
             //update selected item in view model
             viewModel.setSelectedArticle(item)
 
-            Log.d("panda", "onItemClick:-------- ${item.source?.id}")
-            /*val action = HomeFragmentDirections.actionHomeFragmentToDetailFragment(item.source?.id)
-            navController.navigate(action)*/
+            Log.d("panda", "onItemClick:-------- ${item.title}")
+            //passing title as id as of now
+            val action = HomeFragmentDirections.actionHomeFragmentToDetailFragment(item.title)
+            navController.navigate(action)
         }
     }
 

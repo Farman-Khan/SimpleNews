@@ -5,11 +5,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/container"
     android:layout_width="match_parent"
-    android:layout_height="200dp"
-    android:padding="5dp"
-    android:layout_margin="10dp"
-    app:cardCornerRadius="10dp"
-    app:cardElevation="20dp"
+    android:layout_height="@dimen/dp_260"
+    android:layout_marginStart="@dimen/dp_16"
+    android:layout_marginEnd="@dimen/dp_16"
+    android:layout_marginTop="@dimen/dp_12"
+    android:layout_marginBottom="@dimen/dp_12"
+    app:cardCornerRadius="@dimen/dp_5"
+    app:cardElevation="@dimen/dp_20"
+    android:background="@color/black"
     >
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -25,34 +28,52 @@
             android:id="@+id/thumbnail"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:scaleType="centerCrop"
             android:foreground="@drawable/foreground_gradient"
+            android:scaleType="centerCrop"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            />
 
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/title"
             style="@style/TextAppearance.AppCompat.Large"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textColor="@color/white"
-            app:layout_constraintBottom_toBottomOf="parent"
+            android:textColor="@color/title_color"
+            android:textSize="@dimen/sp_20"
+            android:layout_marginBottom="@dimen/dp_24"
+            android:layout_marginStart="@dimen/dp_12"
+            app:layout_constraintBottom_toTopOf="@+id/source"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/source"
             tools:ignore="MissingConstraints"
-            tools:text="Article" />
+            tools:text="Article Title" />
 
         <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/author"
-            android:layout_width="0dp"
+            android:id="@+id/source"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="@color/white"
-            android:textStyle="italic|bold"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="@+id/title"
-            app:layout_constraintTop_toBottomOf="@+id/title"
-            tools:text="Article" />
+            android:layout_marginBottom="@dimen/dp_12"
+            android:layout_marginStart="@dimen/dp_12"
+            android:textColor="@color/source_color"
+            android:textSize="@dimen/sp_12"
+            app:layout_constraintBottom_toBottomOf="@+id/thumbnail"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:text="Article Source" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dp_24"
+            android:textColor="@color/source_color"
+            android:textSize="@dimen/sp_12"
+            tools:text="Published Date"
+            app:layout_constraintBottom_toBottomOf="@+id/source"
+            app:layout_constraintStart_toEndOf="@+id/source"
+            app:layout_constraintTop_toTopOf="@+id/source" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 </com.google.android.material.card.MaterialCardView>
