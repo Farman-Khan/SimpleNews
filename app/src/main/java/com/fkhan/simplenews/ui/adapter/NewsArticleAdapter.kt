@@ -13,6 +13,7 @@ import com.fkhan.simplenews.model.Article
 import com.fkhan.simplenews.ui.fragments.HomeFragment
 import com.fkhan.simplenews.utils.Constant
 import com.fkhan.simplenews.utils.MediaHelper
+import com.fkhan.simplenews.utils.setFont
 
 
 class NewsArticleAdapter(var itemClickListener: HomeFragment.ItemClickListener) :
@@ -52,18 +53,11 @@ class NewsArticleAdapter(var itemClickListener: HomeFragment.ItemClickListener) 
                 it.subSequence(0, it.indexOf("T") )
             }
 
-            //can be written ad extension function
-            applyFont(binding.title, Constant.ROBOTO_SLAB_REGULAR)
-            applyFont(binding.source, Constant.ROBOTO_SLAB_BOLD)
+            binding.title.setFont(Constant.ROBOTO_SLAB_REGULAR)
+            binding.source.setFont(Constant.ROBOTO_SLAB_BOLD)
 
             MediaHelper.loadImage(binding.thumbnail.context,
                 article.urlToImage, binding.thumbnail)
-        }
-
-        private fun applyFont(text: TextView?, fontFamily: String) {
-            text?.apply {
-                typeface = Typeface.createFromAsset(this.context.assets, fontFamily)
-            }
         }
     }
 }
