@@ -1,10 +1,7 @@
 package com.fkhan.simplenews.ui.adapter
 
-import android.graphics.Typeface
 import android.view.LayoutInflater
-import android.view.TextureView
 import android.view.ViewGroup
-import android.widget.TextView
 import androidx.paging.PagingDataAdapter
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView

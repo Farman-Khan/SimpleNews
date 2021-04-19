@@ -10,14 +10,14 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.NavController
 import androidx.navigation.fragment.findNavController
-import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.fkhan.simplenews.databinding.FragmentHomeBinding
 import com.fkhan.simplenews.model.Article
 import com.fkhan.simplenews.ui.adapter.NewsArticleAdapter
+import com.fkhan.simplenews.utils.Constant
+import com.fkhan.simplenews.utils.setFont
 import com.fkhan.simplenews.viewmodel.NewsViewModel
 import kotlinx.coroutines.flow.collect
-import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
 
 class HomeFragment : Fragment() {
@@ -44,6 +44,7 @@ class HomeFragment : Fragment() {
         setupUI()
         setupViewModel()
         setupViewWithPagingData()
+        binding.headerTitle.setFont(Constant.ROBOTO_SLAB_BOLD)
     }
 
     private fun setupViewWithPagingData() {

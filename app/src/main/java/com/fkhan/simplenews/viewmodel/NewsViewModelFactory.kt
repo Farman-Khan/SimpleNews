@@ -3,7 +3,6 @@ package com.fkhan.simplenews.viewmodel
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import com.fkhan.simplenews.api.news.NewsApiImp
-import com.fkhan.simplenews.api.retrofit.RetrofitApiFactory.retrofitApi
 
 class NewsViewModelFactory() :
      ViewModelProvider.Factory {
